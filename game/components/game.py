@@ -1,6 +1,7 @@
 import pygame
 from game.components.spaceship import Spaceship
-
+from game.components.bullets.driver_bullet import driverBullet
+from game.components.enemies.enemy_manager import EnemyManager
 from game.utils.constants import BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS, DEFAULT_TYPE
 
 
@@ -16,7 +17,9 @@ class Game:
         self.x_pos_bg = 0
         self.y_pos_bg = 0
         self.player = Spaceship()
-
+        self.enemy_manager = EnemyManager()
+        self.driver_bullet = driverBullet()
+        
     def run(self):
         
         # Game loop: events - update - draw
@@ -29,23 +32,28 @@ class Game:
         pygame.quit()
 
     def events(self):
-        
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.playing = False
 
     def update(self):
-        
         user_input = pygame.key.get_pressed()
-        self.player.update(user_input)
+        self.player.update(user_input,self)
+        self.enemy_manager.update(self)
+        self.driver_bullet.update(self)
+        
+
 
     def draw(self):
-        
         self.clock.tick(FPS)
         self.screen.fill((255, 255, 255))
         self.draw_background()
         self.player.draw(self.screen)
-        pygame.display.flip()
+        self.enemy_manager.draw(self.screen)
+        self.driver_bullet.draw(self.screen)
+        
+        pygame.display.update()
+        #pygame.display.flip()
 
     def draw_background(self):
         

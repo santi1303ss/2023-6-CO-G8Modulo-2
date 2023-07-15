@@ -1,12 +1,13 @@
 import pygame
 from pygame.sprite import Sprite
-from game.utils.constants import SCREEN_WIDTH, SPACESHIP, SCREEN_HEIGHT
+from game.utils.constants import SCREEN_WIDTH, SPACESHIP, SCREEN_HEIGHT, ENEMY_1
 class Spaceship(Sprite):
     SHIP_WIDTH = 40
     SHIP_HEIGHT = 60
     X_POS = (SCREEN_WIDTH // 2) - SHIP_WIDTH
     Y_POS = 500
     SHIP_SPEED = 10
+    LIMIT_Y = 300
 
     def __init__(self):
         super().__init__()
@@ -16,14 +17,14 @@ class Spaceship(Sprite):
         self.rect.x = self.X_POS
         self.rect.y = self.Y_POS
 
-    def update(self, user_input):
+    def update(self, user_input, game):
         if user_input[pygame.K_LEFT]:
             self.move_left()
-        elif user_input[pygame.K_RIGHT]:
+        if user_input[pygame.K_RIGHT]:
             self.move_right()
-        elif user_input[pygame.K_UP]:
+        if user_input[pygame.K_UP]:
             self.move_up()
-        elif user_input[pygame.K_DOWN]:
+        if user_input[pygame.K_DOWN]:
             self.move_down()
 
     def move_left(self):
@@ -49,10 +50,11 @@ class Spaceship(Sprite):
     def display_limit(self):
         if self.rect.x < 0: #Limite izquierdo
             self.rect.x = SCREEN_WIDTH #Reaparece lado derecho
-        if self.rect.x > SCREEN_WIDTH:
-            self.rect.x = 0
-        if self.rect.y < 0: #Limite de Y
-            self.rect.y = 0 #Amntiene la pocision
+        if self.rect.x > SCREEN_WIDTH: #D
+            self.rect.x = 0 #R.. Iz
+            
+        if self.rect.y < self.LIMIT_Y: #Limite de Y
+            self.rect.y = self.LIMIT_Y #Mantiene la pocision
         if self.rect.y > SCREEN_HEIGHT - self.SHIP_HEIGHT:
             self.rect.y = SCREEN_HEIGHT - self.SHIP_HEIGHT
             
