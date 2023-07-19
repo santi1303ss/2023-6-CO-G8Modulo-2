@@ -39,3 +39,6 @@ FONT_STYLE = 'freesansbold.ttf'
 
 #Sounds
 #BURST_ENEMY_SOUND = os.path.join(SOUND_DIR, "shoot_sound.wav")
+
+WALLPAPER= pygame.image.load(os.path.join(IMG_DIR, "Other/Track.JPG"))
+WALLPAPER2= pygame.image.load(os.path.join(IMG_DIR, "Other/Track1.JPG"))
