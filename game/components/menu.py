@@ -6,7 +6,7 @@ from game.utils.constants import (
     SCREEN_WIDTH,
     WALLPAPER,
     WALLPAPER2,
-    ICON
+    ICON, FONT_BODY, FONT_TITLE
 )
 
 
@@ -14,9 +14,13 @@ class Menu:
     HALF_SCREEN_WIDTH = SCREEN_WIDTH // 2
     HALF_SCREEN_HEIGHT = SCREEN_HEIGHT // 2
 
-    def __init__(self, message, message_2, message_3, screen):
+    def __init__(self, message, message_2, message_3,screen  ): # TITLE = "SPACE XD"):
         screen.fill((255, 255, 255))
-        self.font = pygame.font.Font(FONT_STYLE, 30)
+        #ADD FONTS FOR GAME AND BODY OF GAME
+        self.font = pygame.font.Font(FONT_BODY, 30)
+        #self.font_title = pygame.font.Font(FONT_TITLE, 100)#Implemetar
+        #self.font_result = pygame.font.Font(FONT_TITLE, 30)
+        
         self.icon = pygame.transform.scale(ICON, (120, 80))
         self.icon_rect = self.icon.get_rect()
         self.icon_rect.center = (self. HALF_SCREEN_WIDTH, self.HALF_SCREEN_HEIGHT - 100)
@@ -38,7 +42,7 @@ class Menu:
         self.manager_events_on_menu(game)
 
     def draw(self, screen, game):
-        screen.blit(self.wallpaper, (0, 0))
+        screen.blit(self.wallpaper, [0, 0])
         screen.blit(self.text, self.text_rect)
         screen.blit(self.text_2, self.text_rect_2)
         screen.blit(self.text_3, self.text_rect_3)

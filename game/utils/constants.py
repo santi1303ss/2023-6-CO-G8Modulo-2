@@ -10,7 +10,7 @@ SCREEN_HEIGHT = 600
 SCREEN_WIDTH = 1100
 FPS = 30
 IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
-IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
+TEXT_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
 
 # Assets Constants
 ICON = pygame.image.load(os.path.join(IMG_DIR, "Spaceship/spaceship.png"))
@@ -36,6 +36,8 @@ ENEMY_2 = pygame.image.load(os.path.join(IMG_DIR, "Enemy/ovni2.png"))
 OVNI = pygame.image.load(os.path.join(IMG_DIR, "Enemy/ovni.png"))
 
 FONT_STYLE = 'freesansbold.ttf'
+FONT_TITLE = os.path.join(TEXT_DIR, 'Other/fuente_1.ttf')
+FONT_BODY = os.path.join(TEXT_DIR, 'Other/fuente_2.ttf')
 
 #Sounds
 #BURST_ENEMY_SOUND = os.path.join(SOUND_DIR, "shoot_sound.wav")

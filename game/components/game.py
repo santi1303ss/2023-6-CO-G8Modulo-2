@@ -99,6 +99,7 @@ class Game:
                 f"High Score: {self.best_score}",
                 f"Deaths: {self.death_count}",
             )
+            #the score aumenta por recorrido
 
         self.menu.draw(self.screen, self)  # self llamamos neuvamente a el menu
         self.menu.update(self)
