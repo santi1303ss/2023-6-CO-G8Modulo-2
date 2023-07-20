@@ -1,11 +1,11 @@
 import math
 import pygame
 from game.components.enemies.enemy import Enemy
-from game.utils.constants import OVNI, SCREEN_HEIGHT, SCREEN_WIDTH
+from game.utils.constants import ENEMY_3, SCREEN_HEIGHT, SCREEN_WIDTH, BULLET_ENEMY_TYPE
 
 class Ovni(Enemy):
-    WIDTH = 80
-    HEIGHT = 80
+    WIDTH = 60
+    HEIGHT = 60
     SPEED = 20
     SHOOTING_TIME = 600
 

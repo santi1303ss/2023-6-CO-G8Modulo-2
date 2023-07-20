@@ -18,13 +18,11 @@ class EnemyManager:
             enemy.draw(screen)
 
     def add_enemy(self, game):
-        #if len(self.enemies) < 5:
-        if len(self.enemies) < 1 or (time.time() - self.enemy_time >= 2 and len(self.enemies) < 3):
+        #if len(self.enemies) < 1:
+        if len(self.enemies) < 1 or (time.time() - self.enemy_time >= 2 and len(self.enemies) < 6):
             enemy = Enemy()
             self.enemies.append(enemy)
             self.enemy_time = time.time()
 
     def reset(self):
         self.enemies = []
-        # TODO solucionarl el Arg ovni
-        # self.enemies.append(Ovni())
