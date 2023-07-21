@@ -49,7 +49,6 @@ ENEMY_2 = pygame.image.load(os.path.join(IMG_DIR, "Enemy/enemy_2.png"))#Two
 ENEMY_3 = pygame.image.load(os.path.join(IMG_DIR, "Enemy/enemy_5.png"))#brother of Boliver
 ENEMY_4 = pygame.image.load(os.path.join(IMG_DIR, "Enemy/enemy_3.png"))#Ovni
 
-ASTEROID = pygame.image.load(os.path.join(IMG_DIR, "Asteroid/asteroid.png"))#Asteroide
 
 #Fuentes
 FONT_STYLE = os.path.join(TEXT_DIR, 'Other/fuente_1.ttf')
